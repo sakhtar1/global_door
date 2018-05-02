@@ -1,1 +1,6 @@
-<h1> The World At Your Door Step </h1>
+<% if current_user %>
+  <% puts "Welcome" current_user.name "!" %>
+  <h1> The World Is At Your Door Step </h1>
+  <% else %>
+    <h1> The World Is At Your Door Step </h1>
+  <% end %>
