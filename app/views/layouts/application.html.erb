@@ -10,6 +10,21 @@
   </head>
 
   <body>
-    <%= yield %>
+      <div class="container">
+    <% if user_is_authenticated %>
+       <a href="/country/new"> Create List </a>
+       <br>
+       <a href="/logout"> Log-Out </a>
+       <br>
+       <a href="/home">HomePage</a>
+       <br>
+       <p>Hello, <%=current_user.username %>!</p>
+     <%end %>
+
+   </div>
+    <div class="container">
+      <h1>Global Door</h1>
+      <%=yield%>
+    </div>
   </body>
 </html>

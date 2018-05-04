@@ -1,18 +1,31 @@
 <%= form_for @user, controller: 'users', action: 'create' do |f| %>
+<div>
   <%= f.label :name %>
+  <br>
   <%= f.text_field :name %>
-
+  <br>
+  <br>
   <%= f.label :password %>
+  <br>
   <%= f.password_field :password %>
-
+  <br>
+  <br>
   <%= f.label :email%>
+  <br>
   <%= f.text_field :email%>
-
-  <%= f.label :continent%>
+  <br>
+  <br>
+  <%= f.label :'what is your favorite continent?'%>
+  <br>
   <%= f.text_field :continent %>
-
-  <%= f.label :country %>
+  <br>
+  <br>
+  <%= f.label :'what is your favorite country?' %>
+  <br>
   <%= f.text_field :country %>
+  <br>
+  <br>
 
-  <%= f.submit "create" %>
+  <%= f.submit "Create Profile" %>
+</div>
 <% end %>
