@@ -16,12 +16,12 @@
        <br>
        <a href="/logout"> Log-Out </a>
        <br>
-       <a href="/users/home">HomePage</a>
+       <a href="/statics/home">HomePage</a>
        <br>
        <p>Hello, <%=current_user.username %>!</p>
      <%end %>
       <% if !current_user %>
-          <a class="navbar-brand" href="/signup"/>Sign Up</a>
+          <a class="navbar-brand" href="<%= signup_path %>"/>Sign Up</a>
           <br>
           <a class="navbar-brand" href="/login"/>Log in</a>
           <br>

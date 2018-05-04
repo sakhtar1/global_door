@@ -5,6 +5,8 @@
   <%= f.label :password %>
   <%= f.password_field :password %>
 
-  <%= f.submit "log in" %>
-  Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
+  <%= f.submit "Log In" %>
+  <br>
+  <br>
+  Don't have an account? <%= link_to(controller: 'users', action: 'new') { 'Sign Up' } %>
 <% end %>
