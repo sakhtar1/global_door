@@ -11,16 +11,21 @@
 
   <body>
       <div class="container">
-    <% if user_is_authenticated %>
-       <a href="/country/new"> Create List </a>
+    <% if current_user %>
+       <a href="/countries/new"> Create List </a>
        <br>
        <a href="/logout"> Log-Out </a>
        <br>
-       <a href="/home">HomePage</a>
+       <a href="/users/home">HomePage</a>
        <br>
        <p>Hello, <%=current_user.username %>!</p>
      <%end %>
-
+      <% if !current_user %>
+          <a class="navbar-brand" href="/signup"/>Sign Up</a>
+          <br>
+          <a class="navbar-brand" href="/login"/>Log in</a>
+          <br>
+      <% end %>
    </div>
     <div class="container">
       <h1>Global Door</h1>

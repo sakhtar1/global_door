@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :user_is_authenticated, only: [:new,:create]
+  skip_before_action :user_authenticated, only: [:new,:create]
   def new
     @user = User.new
   end
@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     if (user = User.create user_params)
       session[:user_id] = user.id
-      redirect_to user_path(user)
+      redirect_to 'users/home'
     else
       render 'new'
     end
