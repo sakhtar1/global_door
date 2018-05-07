@@ -1,15 +1,17 @@
 class UsersController < ApplicationController
   skip_before_action :user_authenticated, only: [:new,:create]
+
   def new
     @user = User.new
   end
 
   def create
-    if @user = User.create user_params
-      session[:user_id] = user.id
-      redirect_to '/users/:id'
+    if @user = User.create(user_params)
+       @user.save
+      session[:user_id] = @user.id
+      redirect_to root_path
     else
-      render 'new'
+      redirect_to new_user_path 
     end
   end
 
@@ -18,14 +20,14 @@ class UsersController < ApplicationController
   end
 
   private
-  def user_params
-    params.require(:user).permit(
-      :name,
-      :email,
-      :password_digest,
-      :continent,
-      :country
-      )
-  end
+    def user_params
+      params.require(:user).permit(
+        :name,
+        :email,
+        :password_digest,
+        :continent,
+        :country
+        )
+    end
 
 end

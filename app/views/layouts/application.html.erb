@@ -12,7 +12,7 @@
   <body>
       <div class="container">
     <% if current_user %>
-       <a href="/countries/new"> Create List </a>
+       <a href="/continents"> Continents </a>
        <br>
        <a href="/logout"> Log-Out </a>
        <br>
@@ -21,9 +21,9 @@
        <p>Hello, <%=current_user.username %>!</p>
      <%end %>
       <% if !current_user %>
-          <a class="navbar-brand" href="<%= signup_path %>"/>Sign Up</a>
+          <%= link_to "Sign Up", new_user_path %>     
           <br>
-          <a class="navbar-brand" href="/login"/>Log in</a>
+          <%= link_to "Log In", login_path %>
           <br>
       <% end %>
    </div>
