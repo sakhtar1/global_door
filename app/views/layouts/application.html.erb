@@ -18,7 +18,7 @@
        <br>
        <a href="/statics/home">HomePage</a>
        <br>
-       <p>Hello, <%=current_user.username %>!</p>
+       <p>Hello, <%=current_user.name %>!</p>
      <%end %>
       <% if !current_user %>
           <%= link_to "Sign Up", new_user_path %>     
