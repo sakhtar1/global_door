@@ -3,7 +3,11 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :email, uniqueness: true
   has_many :continents
-  has_many :countries
   has_many :cities, through: :countries
+  has_many :countries, through: :visits
+
+  def user_capitalize
+  	name.capitalize
+  end
 
 end

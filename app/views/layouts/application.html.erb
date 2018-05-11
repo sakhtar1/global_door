@@ -16,9 +16,9 @@
        <br>
        <a href="/logout"> Log-Out </a>
        <br>
-       <a href="/statics/home">HomePage</a>
+       <a href="/home">HomePage</a>
        <br>
-       <p>Hello, <%=current_user.name %>!</p>
+       <p>Hello, <%=current_user.user_capitalize %>!</p>
      <%end %>
       <% if !current_user %>
           <%= link_to "Sign Up", new_user_path %>     

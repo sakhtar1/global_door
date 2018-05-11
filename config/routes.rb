@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   get '/continents/australia' => 'continents#australia'
 
 
-  root 'statics#home'
+  get '/home' => 'statics#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

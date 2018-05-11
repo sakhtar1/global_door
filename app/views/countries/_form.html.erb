@@ -1,0 +1,15 @@
+<%= form_for @country do |f| %>
+<div>
+  <%= f.label :name %>
+  <br>
+  <%= f.text_field :name %>
+  <br>
+  <br>
+  <%= f.label :'Reason why you want to visit' %>
+  <br>
+  <%= f.text_field :reason %>
+  <br>
+  <br>
+  <%= f.submit "Submit" %>
+</div>
+<% end %>

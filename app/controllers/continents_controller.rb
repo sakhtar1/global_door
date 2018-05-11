@@ -1,5 +1,6 @@
 class ContinentsController < ApplicationController
 	skip_before_action :user_authenticated, only: [:index,:north_america, :south_america, :asia, :europe, :africa, :antartica, :australia]
+	
 	def index
 	end
 

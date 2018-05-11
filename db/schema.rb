@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_08_234821) do
+ActiveRecord::Schema.define(version: 2018_05_11_033540) do
 
   create_table "continents", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(version: 2018_05_08_234821) do
     t.string "continent"
     t.string "country"
     t.string "password_digest"
+  end
+
+  create_table "visits", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "country_id"
   end
 
 end
