@@ -24,7 +24,7 @@ class ContinentsController < ApplicationController
 	end
 
 	def australia
-		@country = Country.new
+	
 	end
 
 end

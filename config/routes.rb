@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   
   resources :users
+  resources :countries
 
   get '/continents' => 'continents#index'
   get '/continents/north_america' => 'continents#north_america'
