@@ -17,17 +17,26 @@ class CountriesController < ApplicationController
     end
   end
 
-  def index
 
-    @country = Country.find_by(country_params)
+  	def edit
+  	end
+
+
+  def index
+    @country = Country.find(params[:id])
   end
+
+   def destroy
+    @country.destroy
+    
+   end
 
   private
     def country_params
       params.require(:country).permit(
         :name,
         :city,
-        :reason,
+        :reason
         )
     end
 
