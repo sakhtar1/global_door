@@ -18,12 +18,23 @@ class CountriesController < ApplicationController
   end
 
 
-  	def edit
-  	end
+  def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @country.update(country_params)
+        format.html { redirect_to @country, notice: 'Country was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
 
 
   def index
-    @country = Country.find(params[:id])
+    @country = Country.find_by(id:params[:id])
+   
   end
 
    def destroy

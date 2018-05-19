@@ -2,10 +2,14 @@ Rails.application.routes.draw do
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy'
 
   
   resources :users
+  resources :continents, only: [:show] do
+    # nested resource for posts
+    resources :countries, only: [:show, :index]
+  end
   resources :countries
 
   get '/continents' => 'continents#index'
