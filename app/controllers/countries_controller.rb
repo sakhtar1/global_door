@@ -7,10 +7,10 @@ class CountriesController < ApplicationController
 
   def create
     
-    if @country = Country.create(country_params)
-       @country.save
+    @country = Country.new(country_params)
+       if @country.save
     
-      redirect_to @country
+        redirect_to @country.current_user
 
     else
       redirect_to new_country_path 
@@ -39,14 +39,14 @@ class CountriesController < ApplicationController
 
    def destroy
     @country.destroy
-    
+    redirect_to countries_url, notice: 'Country was successfully destroyed.'
    end
 
   private
     def country_params
       params.require(:country).permit(
         :name,
-        :country,
+        :city,
         :reason
         )
     end
