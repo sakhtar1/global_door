@@ -46,7 +46,7 @@ class CountriesController < ApplicationController
     def country_params
       params.require(:country).permit(
         :name,
-        :city,
+        :country,
         :reason
         )
     end

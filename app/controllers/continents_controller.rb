@@ -24,7 +24,6 @@ class ContinentsController < ApplicationController
 	end
 
 	def australia
-	
 	end
 
 end

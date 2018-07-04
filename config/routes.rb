@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     # nested resource for posts
     resources :countries, only: [:show, :index]
   end
+
   resources :countries
+
 
   get '/continents' => 'continents#index'
   get '/continents/north_america' => 'continents#north_america'
