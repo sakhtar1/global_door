@@ -1,18 +1,18 @@
 <%= form_for @country do |f| %>
 <div>
-  <%= f.label :name %>
+  <%= f.label :'What country did you visit?' %>
   <br>
   <%= f.text_field :name %>
   <br>
   <br>
-   <%= f.label :city %>
+   <%= f.label :'What are some cities you went to?' %>
   <br>
   <%= f.text_field :city%>
   <br>
   <br>
-  <%= f.label :'Favorite part of city' %>
+  <%= f.label :'What are some places/things you visited?' %>
   <br>
-  <%= f.text_field :reason %>
+  <%= f.text_field :description %>
   <br>
   <br>
   <%= f.submit "Submit" %>

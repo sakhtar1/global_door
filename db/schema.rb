@@ -10,17 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_14_193337) do
+ActiveRecord::Schema.define(version: 2018_07_07_040647) do
 
   create_table "continents", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
+    t.string "continent_name"
+    t.string "country_name"
+    t.text "description"
   end
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.string "city"
-    t.text "reason"
+    t.text "description"
   end
 
   create_table "users", force: :cascade do |t|

@@ -5,6 +5,10 @@ class ContinentsController < ApplicationController
 		@continent = Continent.all
 	end
 
+	def new
+		@continent = Continent.new
+	end
+
 	def north_america
 	end
 

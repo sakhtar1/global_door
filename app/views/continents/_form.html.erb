@@ -1,18 +1,18 @@
 <%= form_for @continent do |f| %>
 <div>
-  <%= f.label :'Continent Name' %>
+  <%= f.label :'What continent do you want to visit?' %>
   <br>
   <%= f.text_field :cont_name %>
   <br>
   <br>
-  <%= f.label :'Country Name' %>
+  <%= f.label :'What country in this continent?' %>
   <br>
   <%= f.password_field :country_name %>
   <br>
   <br>
-  <%= f.label :'Reason to Visit' %>
+  <%= f.label :'Which cities do you want to visit? What are some things in your itinerary you want to accomplish?' %>
   <br>
-  <%= f.text_field :visit%>
+  <%= f.text_field :description%>
   <br>
   <br>
 

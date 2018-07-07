@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :countries
 
-
+  get '/continents/form' => 'continents#new'
   get '/continents' => 'continents#index'
   get '/continents/north_america' => 'continents#north_america'
   get '/continents/south_america' => 'continents#south_america'
