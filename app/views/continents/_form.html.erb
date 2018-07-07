@@ -1,0 +1,21 @@
+<%= form_for @continent do |f| %>
+<div>
+  <%= f.label :'Continent Name' %>
+  <br>
+  <%= f.text_field :cont_name %>
+  <br>
+  <br>
+  <%= f.label :'Country Name' %>
+  <br>
+  <%= f.password_field :country_name %>
+  <br>
+  <br>
+  <%= f.label :'Reason to Visit' %>
+  <br>
+  <%= f.text_field :visit%>
+  <br>
+  <br>
+
+  <%= f.submit "Submit" %>
+</div>
+<% end %>

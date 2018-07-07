@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   
   resources :users
-  resources :continents, only: [:show] do
+  #resources :continents, only: [:show] do
     # nested resource for posts
-    resources :countries, only: [:show, :index]
-  end
+   # resources :countries, only: [:show, :index]
+  #end
 
   resources :countries
 
