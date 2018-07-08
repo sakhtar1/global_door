@@ -1,5 +1,7 @@
-<%= @name%>
-<%= @city%>
-<%= @description%>
 
+<ul><%= @countries.each do |country|%>
+Country Name: <%= link_to country.name, country_path(country) %>
+<% end %>
+</ul>
+<p>To log in the countries and cities. you want to visit click here! </a></p>
 <p>To log in the countries you've visited click<a href="/countries/new"> here! </a></p>

@@ -1,0 +1,11 @@
+<h3> You were in <%= @country.continent_name%></h3>
+<h4> You visited: <<%= @country.name%> </h4>
+<h5> Cities you toured: <%= @country.city%></h5>
+<p><%= @country.description%></p>
+
+<h3><% @country.visits.each do |visit| %>
+    Name: <%= link_to visit.user.name, user_path(visit.user) %>
+    <br>
+  <% end %>
+
+<p>To edit click<a href="/countries/edit"> here! </a></p>

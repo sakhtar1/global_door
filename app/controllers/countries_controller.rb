@@ -1,5 +1,5 @@
 class CountriesController < ApplicationController
-
+  skip_before_action :user_authenticated, only: [:new, :create, :show, :index, :edit, :update, :destroy]
 	def new
     	@country = Country.new
   	end
@@ -9,8 +9,7 @@ class CountriesController < ApplicationController
     
     @country = Country.new(country_params)
        if @country.save
-    
-        redirect_to @country.current_user
+        redirect_to :'countries/:id'
 
     else
       redirect_to new_country_path 
@@ -31,10 +30,13 @@ class CountriesController < ApplicationController
     end
   end
 
+  def show
+    @country = Country.find_by(id:params[:id])
+  end
+
 
   def index
-    @country = Country.find_by(id:params[:id])
-   
+   @countries = Country.all
   end
 
    def destroy
@@ -47,7 +49,8 @@ class CountriesController < ApplicationController
       params.require(:country).permit(
         :name,
         :city,
-        :reason
+        :description,
+        :continent_name
         )
     end
 

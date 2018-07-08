@@ -1,6 +1,11 @@
 <%= form_for @country do |f| %>
 <div>
-  <%= f.label :'What country did you visit?' %>
+  <%= f.label :'What continent did you visit?' %>
+  <br>
+  <%= f.text_field :continent_name %>
+  <br>
+  <br>
+  <%= f.label :'Which country did you travel to?' %>
   <br>
   <%= f.text_field :name %>
   <br>
