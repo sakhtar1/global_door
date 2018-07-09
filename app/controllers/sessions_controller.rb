@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :user_authenticated, only: [:new,:create]
+  
 
   def new
     @user = User.new
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       redirect_to '/login'
     end
   end
-
+  
   def destroy
     session.delete :user_id
     redirect_to '/login'

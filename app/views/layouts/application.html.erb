@@ -15,7 +15,7 @@
     <% if current_user %>
        <a href="/countries"> Countries </a>
        <br>
-       <a href="/logout"> Log-Out </a>
+       <%= link_to "Log Out", logout_path, method: :delete %>
        <br>
        <a href="/home">HomePage</a>
        <br>

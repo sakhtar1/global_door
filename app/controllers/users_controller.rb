@@ -1,6 +1,6 @@
 
 class UsersController < ApplicationController
-  skip_before_action :user_authenticated, only: [:new,:create]
+  before_action :set_user, only: [:show, :destroy]
 
   def new
     @user = User.new
@@ -21,10 +21,13 @@ class UsersController < ApplicationController
 
 
   def show
-    @user = User.find_by(id:params[:id])
   end
 
   private
+    def set_user
+      @user = User.find(params[:id])
+    end
+
     def user_params
       params.require(:user).permit(
         :name,

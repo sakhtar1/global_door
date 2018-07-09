@@ -1,19 +1,14 @@
 class CountriesController < ApplicationController
-  skip_before_action :user_authenticated, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+  before_action :set_country, only: [:show, :edit, :update, :destroy]
 	def new
     	@country = Country.new
   	end
 
 
   def create
-    
-    @country = Country.new(country_params)
-       if @country.save
-        redirect_to :'countries/:id'
-
-    else
-      redirect_to new_country_path 
-    end
+    @country = Country.create(country_params)
+    @country.save
+    redirect_to @country
   end
 
 
@@ -45,6 +40,10 @@ class CountriesController < ApplicationController
    end
 
   private
+
+  def set_country
+      @country = Country.find(params[:id])
+    end
     def country_params
       params.require(:country).permit(
         :name,

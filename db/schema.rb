@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_08_053205) do
+ActiveRecord::Schema.define(version: 2018_07_08_203106) do
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 2018_07_08_053205) do
     t.string "continent"
     t.string "country"
     t.string "password_digest"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "visits", force: :cascade do |t|
